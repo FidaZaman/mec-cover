@@ -22,7 +22,7 @@ const teachers = {
     Muhammad_Saqibul_Amin: `Muhammad Saqibul Amin <br> Lecturer (Social Scince) (Part Time)<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     Muaz_Bin_Ali: `Muaz Bin Ali <br> Lecturer (CE) Part Time<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     Yasin_Edmam_Iman: `Yasin Edmam Iman <br> Lecturer (CE) Part Time<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
-    Md_Ismail_Hossen: `Md. Ismail Hossen <br> Lecturer (CSE) Part Time<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Ismail_Hossen: `Md. Ismail Hossen <br> Lecturer (CSE)<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     A_K_M_Mahfuzur_Rahman: `A.K.M Mahfuzur Rahman <br> Lecturer (CSE) Part Time<br><span style="font-size:14px;">Mymensingh Engineering College</span>`
 };
 
