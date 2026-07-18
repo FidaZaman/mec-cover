@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Archivo+Black&family=Belanosima:wght@400;600&family=Hind+Siliguri:wght@600&family=Mulish:wght@200&family=Poppins:wght@200;400;800;900&display=swap');
-
 @page {
   size: A4;
 }
@@ -64,16 +62,29 @@
   overflow-y: auto;
 }
 
-.popup .cross:first-child {
-  background-color: rgb(240, 143, 143);
+.popup .cutpop  {
+  background-color: rgb(240, 143, 143) !important;
   color: rgb(139, 6, 6);
 }
+.popup .cutpop:focus, .popup .savepbtn:focus, .popup .printbtn:focus {
+  box-shadow: inset 3px 3px 5px #484848;
+}
 
-.popup .cross:last-child {
-  background-color: rgb(143, 240, 151);
+.popup .savepbtn {
+  background-color: rgb(143, 240, 151) !important;
   color: rgb(10, 139, 6);
 }
 
+.popup .printbtn {
+  background-color: rgb(121, 185, 248) !important;
+  color: rgb(1, 29, 70);
+  border: none;
+  outline: none;
+  margin:1px 7px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 .popup .cross {
   float: right;
@@ -110,10 +121,56 @@ p {
 }
 
 @media print {
+  /* 1. Hide all main sections of the page EXCEPT the popup */
+  body > *:not(#popup) {
+    display: none !important;
+  }
 
-  /* Hide print button when printing */
-  button {
-    display: none;
+  /* 2. Reset the body so there is no weird scrolling or background */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+  }
+
+  /* 3. Strip away the screen styling from the popup (shadows, margins, transforms) */
+  #popup {
+    display: block !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transform: none !important; /* Stops it from sliding around */
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  /* 4. Reset the zoom that was applied for smaller screens so it prints full size */
+  #popup .container {
+    zoom: 1 !important; 
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 210mm !important; /* A4 standard width */
+  }
+
+  /* 5. Hide the top sticky bar containing the Print, PDF, and Close buttons */
+  #popup > div:first-child {
+    display: none !important;
+  }
+
+  /* 6. Force the browser to print background colors and graphics */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* 7. Setup proper A4 page printing */
+  @page {
+    size: A4;
+    margin: 0; /* Remove default browser margins */
   }
 }
 
@@ -175,11 +232,17 @@ p {
   margin-bottom: 5px;
 }
 
+.courseinfo .topics #expName {
+  text-transform: none !important;
+}
+
 .courseinfo table th {
   text-align: center;
 
 }
-
+.courseinfo table, table th, table td {
+  border: none;
+}
 .courseinfo table {
   display: flex;
   justify-content: center;

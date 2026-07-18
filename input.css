@@ -46,6 +46,9 @@ body {
   .input {
     margin: 10px 40px 10px 20px;
   }
+  .resbtn span {
+    display: none;
+  }
 }
 .popup-btn:hover {
   background-color: #095a4f;
@@ -127,6 +130,32 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+.category .catop {
+ flex-direction: row;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#tm {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+#tm .tyop {
+ flex-direction: row;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 
 .button {
   background-color: #4CAF50;
@@ -265,11 +294,7 @@ select {
 }
 
 /* Custom Radio Buttons */
-.form-group:nth-child(2),.form-group:nth-child(5){
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+
 input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
